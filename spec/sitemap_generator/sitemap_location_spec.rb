@@ -46,6 +46,15 @@ describe SitemapGenerator::SitemapLocation do
     @l.filename.should == @namer.to_s
   end
 
+  it 'should allow for settable adapters' do
+    namer = SitemapGenerator::SitemapNamer.new(:xxx)
+    l = SitemapGenerator::SitemapLocation.new(:namer => namer)
+    l.adapter.should be_instance_of SitemapGenerator::FileAdapter
+
+    l = SitemapGenerator::SitemapLocation.new(:namer => namer, :adapter => SitemapGenerator::UncompressedFileAdapter.new)
+    l.adapter.should be_instance_of SitemapGenerator::UncompressedFileAdapter
+  end
+
   it "should protect the filename from further changes in the Namer" do
     @namer = SitemapGenerator::SitemapNamer.new(:xxx)
     @l = SitemapGenerator::SitemapLocation.new(:namer => @namer)

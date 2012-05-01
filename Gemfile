@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'builder'
+gem 'carrierwave'
 gem 'sitemap_generator', :path => './'
 
 group :development, :test do

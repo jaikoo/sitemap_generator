@@ -11,6 +11,7 @@ module SitemapGenerator
   autoload(:Interpreter, 'sitemap_generator/interpreter')
   autoload(:FileAdapter, 'sitemap_generator/adapters/file_adapter')
   autoload(:WaveAdapter, 'sitemap_generator/adapters/wave_adapter')
+  autoload(:UncompressedFileAdapter, 'sitemap_generator/adapters/uncompressed_file_adapter')
   autoload(:BigDecimal,  'sitemap_generator/core_ext/big_decimal')
   autoload(:Numeric,     'sitemap_generator/core_ext/numeric')
 
